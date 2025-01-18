@@ -12,14 +12,13 @@ word_count()
 ##looking for solution to increase count of letter in the dictionary
 def letter_count():
      with open("books/frankenstein.txt") as f:
-        count=0
+        lettercount = {}
         file_contents = f.read()
         lowered_string = file_contents.lower()
-        for letters in lowered_string:
-            letters = {
-                "a": +=1,
-             "b": +=1,
-             "c": +=1
-         }
-        print(letters)
+        for letter in lowered_string:
+            if letter in lettercount:
+                lettercount[letter] += 1
+            else:
+                lettercount[letter] = 1
+        print(lettercount)
 letter_count()

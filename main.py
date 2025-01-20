@@ -16,9 +16,10 @@ def letter_count():
         file_contents = f.read()
         lowered_string = file_contents.lower()
         for letter in lowered_string:
-            if letter in lettercount:
-                lettercount[letter] += 1
-            else:
-                lettercount[letter] = 1
+            if letter.isalpha():
+                if letter in lettercount:
+                    lettercount[letter] += 1
+                else:
+                    lettercount[letter] = 1
         print(lettercount)
 letter_count()

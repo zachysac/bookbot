@@ -1,3 +1,5 @@
+print("--- Begin report of books/frankenstein.txt ---")
+
 def word_count():
     with open("books/frankenstein.txt") as f:
         count=0
@@ -8,8 +10,6 @@ def word_count():
         print(f"There are {count} words in the text.")
 word_count()
 
-##this is not working
-##looking for solution to increase count of letter in the dictionary
 def letter_count():
      with open("books/frankenstein.txt") as f:
         lettercount = {}
@@ -21,5 +21,10 @@ def letter_count():
                     lettercount[letter] += 1
                 else:
                     lettercount[letter] = 1
-        print(lettercount)
+        for sepletter in lettercount:
+            count = lettercount[sepletter]
+            lettercount.sort(reverse=True, key=count)
+        print(f"The '{sepletter}' character was found {count} times")
+
 letter_count()
+print("--- End report ---")
